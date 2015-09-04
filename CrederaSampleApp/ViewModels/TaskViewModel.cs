@@ -17,10 +17,10 @@ namespace CrederaSampleApp.ViewModels {
         // CURRENT TASK -> Inside TaskList
         public UserTask CurrentTask { get; set; }
 
-        // LIST OF TASKS -> Inside TaskList:ListView
+        // LIST OF TASKS -> Inside ListView
         public ObservableCollection<UserTask> UserTasks { get; set; }
 
-
+        // RETRIEVE USER TASKS
         public async Task GetUserTasks() {
             // Get current user's tasks
             ParseQuery<ParseObject> userTaskQuery = new ParseQuery<ParseObject>("UserTask").WhereEqualTo("owner", ParseUser.CurrentUser);
@@ -38,7 +38,7 @@ namespace CrederaSampleApp.ViewModels {
             }
         }
 
-        // Add new UserTask to database
+        // ADD NEW TASK TO DATABASE
         public async void AddNewUserTask() {
             // new ParseObject("tableName")
             ParseObject newTask = new ParseObject(className: "UserTask");
@@ -52,7 +52,7 @@ namespace CrederaSampleApp.ViewModels {
             UserTasks.OrderBy(x => x.DueDate);
         }
 
-
+        // LOGIN / SIGNUP
         public async void LoginOrCreateAccount() {
             try {
                 await ParseUser.LogInAsync("test", "test");
