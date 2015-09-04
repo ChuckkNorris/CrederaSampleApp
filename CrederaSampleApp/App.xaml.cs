@@ -33,6 +33,7 @@ namespace CrederaSampleApp
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Parse.ParseClient.Initialize("PAr7vBfcYKrw9hnyhhhuw6dKQiPQV1tzCpKoxqfH", "cnZ6Q2OwxNTGWh6s6uqOL42L5tohmeNz25PBQbqF");
         }
 
         /// <summary>

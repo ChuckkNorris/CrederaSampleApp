@@ -22,7 +22,7 @@ namespace CrederaSampleApp.Models {
         }
 
         // DUE DATE
-        private DateTime _DueDate;
+        private DateTime _DueDate = DateTime.Today;
         public DateTime DueDate {
             get { return _DueDate; }
             set { SetField(ref _DueDate, value); }

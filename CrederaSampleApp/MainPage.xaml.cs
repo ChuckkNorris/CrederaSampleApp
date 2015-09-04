@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrederaSampleApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,11 +23,15 @@ namespace CrederaSampleApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public TaskViewModel TaskVM { get; set; }
         public MainPage()
         {
             this.InitializeComponent();
+            TaskVM = new TaskViewModel();
         }
 
-
+        private void btnAddTask_Click(object sender, RoutedEventArgs e) {
+            TaskVM.AddNewUserTask();
+        }
     }
 }
